@@ -33,7 +33,7 @@ return [
 
 ## Usage
 
-### **Encode Messages Using Supported Methods**
+## **Encode Messages Using Supported Methods**
 
 ```php
 use Meetup\Encoder\Encoder;
@@ -50,6 +50,21 @@ echo Encoder::encode('hello world', 'caesar', ['shift' => 1]);
 ### Available Methods:
 - **morse:** Encodes text into Morse code.
 - **caesar:** Shifts characters using the Caesar Cipher (customizable shift value).
+
+## Creating your own encoder
+
+An encoder is any class that implements \Meetup\Encoder\Encoders\Contracts\Encoder. Here's what that interface looks like.
+
+```php
+interface Encoder
+{
+    public function encode(string $text, array $options = []): string;
+}
+```
+
+```$text``` is the text to encode, and ```$options``` is an array of options that can be used to customize the encoding process.
+
+After creating your own Encoder you must register it in the ```encoders``` array in the ```meetup-demo``` config file.
 
 ---
 
