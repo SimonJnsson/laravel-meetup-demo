@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Meetup\Encoder\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class EncoderCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-meetup-demo';
 
     public $description = 'My command';
 
