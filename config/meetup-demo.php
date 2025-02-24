@@ -1,6 +1,7 @@
 <?php
 
-// config for Meetup/Encoder
 return [
-
+    'encoders' => [
+        'morse' => Meetup\Encoder\Encoders\MorseCodeEncoder::class,
+    ],
 ];

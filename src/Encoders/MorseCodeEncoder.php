@@ -2,7 +2,7 @@
 
 namespace Meetup\Encoder\Encoders;
 
-class MorseCodeEncoder
+class MorseCodeEncoder implements Contracts\Encoder
 {
     protected array $morseMap = [
         'a' => '.-', 'b' => '-...', 'c' => '-.-.', 'd' => '-..', 'e' => '.',
