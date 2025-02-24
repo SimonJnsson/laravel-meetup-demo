@@ -13,7 +13,7 @@ class MorseCodeEncoder implements Contracts\Encoder
         'z' => '--..', ' ' => '/'
     ];
 
-    public function encode(string $text): string
+    public function encode(string $text, array $options = []): string
     {
         $text = strtolower($text);
 

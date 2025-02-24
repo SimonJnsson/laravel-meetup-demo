@@ -4,7 +4,7 @@ namespace Meetup\Encoder;
 
 class Encoder {
 
-    public static function encode(string $text, string $method): string
+    public static function encode(string $text, string $method, array $options = []): string
     {
         $method = strtolower($method);
         $encoders = config('meetup-demo.encoders', []);
@@ -19,8 +19,9 @@ class Encoder {
             throw new \InvalidArgumentException("Encoder '{$method}' must implement the Encoder interface");
         }
 
+        /** @var \Meetup\Encoder\Encoders\Contracts\Encoder $encoder */
         $encoder = new $encoderClass();
 
-        return $encoder->encode($text);
+        return $encoder->encode($text, $options);
     }
 }

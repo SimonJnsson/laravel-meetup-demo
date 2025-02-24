@@ -27,3 +27,13 @@ it('throws an exception if the encoder does not implement the required interface
     expect(fn() => Encoder::encode('hello world', 'invalid'))
         ->toThrow(InvalidArgumentException::class, "Encoder 'invalid' must implement the Encoder interface");
 });
+
+it('encodes a message using the caesar cipher with default shift', function () {
+    $result = Encoder::encode('hello laravel meetup', 'caesar');
+    expect($result)->toBe('khoor odudyho phhwxs');
+});
+
+it('encodes a message using the caesar cipher with custom shift', function () {
+    $result = Encoder::encode('hello laravel meetup', 'caesar', ['shift' => 1]);
+    expect($result)->toBe('ifmmp mbsbwfm nffuvq');
+});
