@@ -17,9 +17,6 @@ class EncoderServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-meetup-demo')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_meetup_demo_table')
-            ->hasCommand(EncoderCommand::class);
+            ->hasConfigFile();
     }
 }
